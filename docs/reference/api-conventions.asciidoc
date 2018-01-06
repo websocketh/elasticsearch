@@ -57,24 +57,24 @@ The defaults settings for the above parameters depend on the api being used.
 NOTE: Single index APIs such as the <<docs>> and the
 <<indices-aliases,single-index `alias` APIs>> do not support multiple indices.
 
-[[date-math-index-names]]
-== Date math support in index names
+[[date-match-index-names]]
+== Date match support in index names
 
-Date math index name resolution enables you to search a range of time-series indices, rather
+Date match index name resolution enables you to search a range of time-series indices, rather
 than searching all of your time-series indices and filtering the results or maintaining aliases.
 Limiting the number of indices that are searched reduces the load on the cluster and improves
 execution performance. For example, if you are searching for errors in your
-daily logs, you can use a date math name template to restrict the search to the past
+daily logs, you can use a date match name template to restrict the search to the past
 two days.
 
-Almost all APIs that have an `index` parameter, support date math in the `index` parameter
+Almost all APIs that have an `index` parameter, support date match in the `index` parameter
 value.
 
-A date math index name takes the following form:
+A date match index name takes the following form:
 
 [source,txt]
 ----------------------------------------------------------------------
-<static_name{date_math_expr{date_format|time_zone}}>
+<static_name{date_match_expr{date_format|time_zone}}>
 ----------------------------------------------------------------------
 
 Where:
